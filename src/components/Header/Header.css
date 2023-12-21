@@ -1,0 +1,34 @@
+.header {
+  background-color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+.header .logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.header ul {
+  display: flex;
+  gap: 2rem;
+}
+.header ul li {
+  list-style: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+.header ul li:hover {
+  border-bottom: 2px solid #a332b3;
+}
+
+@media (max-width: 420px) {
+  .header ul {
+    gap: 1rem;
+  }
+  .header ul li {
+    font-size: 0.7rem;
+  }
+}
