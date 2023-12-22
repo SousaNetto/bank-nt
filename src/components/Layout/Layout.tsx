@@ -1,12 +1,11 @@
+import { Box } from '@chakra-ui/react'
 import { Header } from '../Header/Header'
-import { Login } from '../Login/Login'
 
 export const Layout = ({ children }: any) => {
     return (
-        <>
+        <Box minHeight='100vh' bg='#A332B3'>
             <Header />
             {children}
-            <Login />
-        </>
+        </Box>
     )
 }

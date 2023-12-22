@@ -1,29 +1,10 @@
 // import styled from "styled-components";
 import { Box, Center, Input, Button } from "@chakra-ui/react";
 import { login } from "../../services/login";
-import { useEffect, useState } from "react";
-import { api } from "../../api"
-
-interface UserData {
-  email: string
-  password: string
-  name: string
-}
+import { useState } from "react";
 
 export const Login = () => {
   const [ email, setEmail ] = useState('')
-  const [ userData, setUserData ] = useState<null | UserData>()
-
-  useEffect(() => {
-    const getData = async () => {
-      const data: any | UserData = await api
-      setUserData(data)
-    }
-    
-    getData()
-  })
-
-  console.log(userData)
 
   return (
       <Box minHeight="100vh" bg="#A332B3" p="25px" display="flex" alignItems="center" justifyContent="center">
