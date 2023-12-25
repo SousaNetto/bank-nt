@@ -6,6 +6,7 @@
   align-items: center;
   padding: 10px 20px;
   flex-wrap: wrap;
+  width: 100vw;
 }
 .header .logo {
   font-size: 2rem;
