@@ -1,9 +1,10 @@
-import { Center, SimpleGrid, Spinner } from "@chakra-ui/react"
+import { Center, SimpleGrid, Spinner, Text } from "@chakra-ui/react"
 import { useContext, useEffect, useState } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { api } from "../api"
 import CardInfo from "../components/CardInfo"
 import { AppContext } from "../components/AppContext"
+import { format } from "date-fns"
 
 interface UserData {
   email: string
@@ -31,9 +32,8 @@ const Conta = () => {
     getData();
   }, [])
 
-  const actualData = new Date()
-  
-
+  const actualDate = new Date()
+  const formattedDate = format(actualDate, 'dd/MM/yyyy HH:mm:ss')
 
   if(userData && id !== userData.id) {
     navigate('/')
@@ -50,9 +50,14 @@ const Conta = () => {
           <>
             <CardInfo
               mainContent={`Bem vindo ${userData?.name}`}
-              content={`${actualData.getDay()} / ${actualData.getMonth()} / ${actualData.getFullYear()} ${actualData.getHours()} : ${actualData.getMinutes()}`}
+              content={formattedDate}
             />
             <CardInfo mainContent="Saldo" content={`R$ ${userData.balance}`} />
+            <Link to='/infoconta'>
+              <Text fontSize='xl' color='white'>
+                  Ver todas Informações
+              </Text>
+            </Link>
           </>
         )}
       </SimpleGrid>

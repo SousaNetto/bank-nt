@@ -1,7 +1,7 @@
 import { AppContext } from './AppContext'
 import '../css/Header.css'
 import { useContext } from 'react'
-import { Button, Flex } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 import { changeLocalStorage } from '../services/storage'
 
@@ -17,27 +17,28 @@ export const Header = () => {
         navigate('/')
     }
         return (
-            <Flex>
+            <>
                 <div className='header'>
-                    <div className='logo'>Logo</div>
+                    <div className='logo'>Bank NT</div>
                     <div>
                         <ul>
                             <li><a href="#">Página inicial</a></li>
                             <li><a href="#">Para você</a></li>
                             <li><a href="#">Para seu negócio</a></li>
-                        </ul>
-                    </div>
                 {
                     isLoggedIn && (
-                        <>
-                            <Button className='button-logout'
-                            onClick={() => logout()}
-                            >
-                                Sair
-                            </Button>
-                        </>
+                            <li>
+                                <Button className='button-logout'
+                                onClick={() => logout()}
+                                >
+                                    Sair
+                                </Button>
+                            </li>
+ 
                     )
                 }
+                        </ul>
+                    </div>
                 </div>
-            </Flex>
+            </>
         )}
