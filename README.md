@@ -1,6 +1,6 @@
 # PROJETO BANK-NT
 
-Projeto criado com o desafio de typescript e react
+Projeto criado com o desafio de typescript e react da dio.me
 
 ## COMO ACESSAR?
 
