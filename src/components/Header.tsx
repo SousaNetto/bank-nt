@@ -20,18 +20,17 @@ export const Header = () => {
             <Flex>
                 <div className='header'>
                     <div className='logo'>Logo</div>
-                </div>
-                <div className='header'>
-                    <ul>
-                        <li><a href="#">Página inicial</a></li>
-                        <li><a href="#">Para você</a></li>
-                        <li><a href="#">Para seu negócio</a></li>
-                    </ul>
-                </div>
+                    <div>
+                        <ul>
+                            <li><a href="#">Página inicial</a></li>
+                            <li><a href="#">Para você</a></li>
+                            <li><a href="#">Para seu negócio</a></li>
+                        </ul>
+                    </div>
                 {
                     isLoggedIn && (
                         <>
-                            <Button
+                            <Button className='button-logout'
                             onClick={() => logout()}
                             >
                                 Sair
@@ -39,5 +38,6 @@ export const Header = () => {
                         </>
                     )
                 }
+                </div>
             </Flex>
         )}

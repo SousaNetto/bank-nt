@@ -28,8 +28,12 @@
 @media (max-width: 420px) {
   .header ul {
     gap: 1rem;
+    display: none;
   }
   .header ul li {
     font-size: 0.7rem;
+  }
+  .button-logout {
+    display: none;
   }
 }
